@@ -48,15 +48,15 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1">
-              <WouterRouter base={wouterBase}>
+          <WouterRouter base={wouterBase}>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1">
                 <AppRoutes />
-              </WouterRouter>
-            </main>
-            <Footer />
-          </div>
+              </main>
+              <Footer />
+            </div>
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
