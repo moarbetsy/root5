@@ -153,8 +153,8 @@ function vitePluginManusDebugCollector(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
-  // Needed for GitHub Pages at https://moarbetsy.github.io/root5/
-  base: "/root5/",
+  // Needed for GitHub Pages at https://moarbetsy.github.io/root5//
+  base: "/root5//",
   plugins,
   resolve: {
     alias: {
