@@ -14,7 +14,16 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const wouterBase = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+// Normalize Vite BASE_URL for wouter:
+// - "/" -> ""
+// - "/root5/" or "/root5//" -> "/root5"
+const wouterBase = (() => {
+  const raw = import.meta.env.BASE_URL || "/";
+  if (raw === "/") return "";
+  // trim trailing slashes, keep leading slash
+  const trimmed = raw.replace(/\/+$/, "");
+  return trimmed || "";
+})();
 
 function AppRoutes() {
   return (
